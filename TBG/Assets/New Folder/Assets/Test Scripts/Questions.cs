@@ -47,7 +47,7 @@ public class Questions : MonoBehaviour
     {
         num1 = Random.Range(0, 10);                          //Set the right side of the question to a random between 0 and 10
         num2 = Random.Range(0, 10);                          //Set the left side of the question to a random between -10 and 10 
-        Operator = 3;                                       //Set the operator of the question to a random between 1 and 4
+        Operator = 3;                                       //Set the operator of the question
         switch (Operator)
         {
 
@@ -69,7 +69,14 @@ public class Questions : MonoBehaviour
                 CorrectAnswer = num1 + num2;                               //Add
                 WrongAnswer = CorrectAnswer + Random.Range(-1, 1);          //Add a number between -1 and 1 to the correct answer and set it to the wrong answer
                 QuestionText.GetComponent<Text>().text = num1.ToString() + "  +  " + num2.ToString() + "  =  ";                   //Display the question
-                break;                                                       //Break the switch
+                break;
+
+
+            case 4:                                                         //If operator is 4
+                CorrectAnswer = num1 / num2;                               //Division
+                WrongAnswer = CorrectAnswer + Random.Range(-1, 1);          //Add a number between -1 and 1 to the correct answer and set it to the wrong answer
+                QuestionText.GetComponent<Text>().text = num1.ToString() + "  /  " + num2.ToString() + "  =  ";                   //Display the question
+                break;   //Break the switch
 
             default:
                 break;
